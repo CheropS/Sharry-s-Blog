@@ -6,8 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sharry's Blog</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='clean-blog.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <h1>Welcome to Sharry's Blog</h1>
+    <header class="masthead">
+        <style>
+            body{
+                background: url("{{ url_for('static',filename='img/home-bg.jpg') }}") center/cover no-repeat;}
+        
+        </style>
+        <h1 align='center' style="display: grid;">Sharry's Blog</h1>
+    </header>
+
+   
 </body>
 </html>
