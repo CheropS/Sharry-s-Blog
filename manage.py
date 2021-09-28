@@ -1,23 +1,30 @@
-from flask import Flask, render_template
 
-app=Flask(__name__)
+from app import create_app, db
+from app.models import User
+from flask_script import Manager,Server
+from flask_migrate import Migrate,MigrateCommand
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+app = create_app('development')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
+manager = Manager(app)
+manager.add_command('server',Server)
+migrate = Migrate(app,db)
+manager.add_command('db',MigrateCommand)
 
-@app.route('/post')
-def post():
-    return render_template('post.html')
+@manager.command
+def test():
+    '''
+    Run the unit tests.
+    '''
+    import unittest
+    tests = unittest.TestLoader().discover('test')
+    unittest.TextTestRunner(verbosity=2).run(tests)
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
-    
-if __name__=='__main__':
-    app.run(debug=True)
+@manager.shell
+def make_shell_context():
+    return dict(app = app,db = db,User= User)
+
+if __name__ == '__main__':
+    manager.run()
+
 
