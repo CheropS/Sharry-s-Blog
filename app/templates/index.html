@@ -1,12 +1,17 @@
 {% extends 'base.html'%}
+
 <!-- block content  -->
 {% block content%}
-    <header class="masthead">
-        <!-- <style>
-            body{
-                background: url("{{ url_for('static',filename='img/home-bg.jpg') }}") center/cover no-repeat;}
-        
-        </style> -->
-        <!-- <h1 align='center' style="display: grid;">Sharry's Blog</h1> -->
-    </header>
+   <div class="container">
+       <img src="{{ url_for('static',filename='img/home-bg.jpg') }}") center no-repeat;} width="1000px">
+   </div><br> <br>
+
+   <div class="container">
+       <h3>What is Love?</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero dolorum veniam, aspernatur voluptate aliquid alias quae nihil ut aliquam sed deleniti dolorem molestias voluptates ad ratione, error neque recusandae velit?</p>
+   </div>
+   <div class="container">
+       <h3>Business Ideas</h3>
+       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi exercitationem architecto aperiam voluptas illo saepe vel placeat perferendis consequatur, et cumque consectetur tenetur fugit quod. Nobis fugit iste unde quae!</p>
+   </div>
 {% endblock%}
