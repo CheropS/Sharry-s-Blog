@@ -1,10 +1,10 @@
 import os 
 from dotenv import load_dotenv
-
+load_dotenv()
 
 class Config:
     
-    SQLALCHEMY_DB_URI='postgresql+psycopg2://moringa:kenyan@localhost/blog'
+   
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     
     SECRET_KEY=os.environ.get('SECRET_KEY')
