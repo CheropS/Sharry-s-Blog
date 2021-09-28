@@ -1,25 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sharry's Blog</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='clean-blog.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header class="masthead">
-        <style>
-            body {
-                background: url("{{ url_for('static',filename='img/about-bg.jpg') }}") center/cover no-repeat;}
-        
-        </style>
-        <!-- <h1 align='center' style="display: grid;">Sharry's Blog</h1> -->
-    </header>
+{% extends 'base.html'%}
 
-   
-</body>
-</html>
+<!-- block content  -->
+{% block content%}
+   <div class="container">
+       <img src="{{ url_for('static',filename='img/about-bg.jpg') }}") center no-repeat;} width="1000px">
+   </div><br> <br>
+
+   <div class="container">
+       <h3>About Us</h3>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero dolorum veniam, aspernatur voluptate aliquid alias quae nihil ut aliquam sed deleniti dolorem molestias voluptates ad ratione, error neque recusandae velit?</p>
+   </div>
+{% endblock%}
